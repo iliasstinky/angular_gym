@@ -1,0 +1,43 @@
+<div class="admin-container">
+
+  <!-- Search Bar -->
+  <div class="s-c">
+
+  <mat-form-field class="search-bar" appearance="outline">
+    <mat-label>Search by ID</mat-label>
+    <input matInput [(ngModel)]="searchId" (input)="searchSubscription()" placeholder="Enter subscription ID">
+    <button mat-icon-button matSuffix *ngIf="searchId" (click)="clearSearch()">
+      <mat-icon>clear</mat-icon>
+    </button>
+
+
+  </mat-form-field>
+</div>
+  <div class="b-c">
+    <button mat-raised-button color="primary" routerLink="/add_subscription" class="buttonspace"> add subscription </button>
+
+  </div>
+  <!-- Cards with Pagination -->
+  <div class="card-container">
+    <mat-card *ngFor="let subscription of pagedSubscriptions" class="minimalistic-card">
+      <mat-card-content>
+        <p><strong>Card ID:</strong> {{ subscription.id }}</p>
+        <p><strong>Start Date:</strong> {{ subscription.start_date }}</p>
+        <p><strong>End Date:</strong> {{ subscription.end_date }}</p>
+        <p><strong>Status:</strong> {{ subscription.status }}</p>
+        <p><strong>Type:</strong> {{ subscription.type }}</p>
+        <p><strong>Member ID:</strong> {{ subscription.memberId }}</p>
+        
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" class="action-button">Renew</button>
+        <button mat-raised-button color="accent" class="action-button">Upgrade</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <!-- Pagination -->
+  <mat-paginator [length]="filteredSubscriptions.length" [pageSize]="5" (page)="onPageChange($event)">
+  </mat-paginator>
+
+</div>

@@ -1,0 +1,62 @@
+<div class="container">
+  <mat-card class="card-position">
+    <mat-card-header>
+      Create a new member of Prestige Fitness
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+
+    <br>
+    <mat-card-content>
+      <form class="example-form" (ngSubmit)="addUser()">
+        <div class="row">
+          <!-- username -->
+          <div class="column">
+            <mat-form-field class="example-full-width">
+              <mat-label>username</mat-label>
+              <input matInput placeholder="username" [(ngModel)]="newUser.username" name="username" required>
+            </mat-form-field>
+          </div>      
+        </div>
+
+        <div class="row">
+          <!-- Email -->
+          <div class="column">
+            <mat-form-field class="example-full-width">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Email" [(ngModel)]="newUser.email" name="email" required>
+            </mat-form-field>
+          </div>
+          <!-- Age -->
+          <div class="column">
+            <mat-form-field class="example-full-width">
+              <mat-label>Age</mat-label>
+              <input matInput placeholder="Age" [(ngModel)]="newUser.age" name="age" required>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Phone -->
+          <div class="column full-width">
+            <mat-form-field class="example-full-width">
+              <mat-label>Phone</mat-label>
+              <input matInput placeholder="Phone" [(ngModel)]="newUser.phone" name="phone" required>
+            </mat-form-field>
+          </div>
+        </div>
+        <!-- Password -->
+        <div class="row">
+          <div class="column full-width">
+            <mat-form-field class="example-full-width">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Password" [(ngModel)]="newUser.password" name="password" required>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <button mat-button color="primary" type="submit">Create</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

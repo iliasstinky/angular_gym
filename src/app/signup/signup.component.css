@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 92vh; /* Full viewport height */
+}
+
+.mat-card {
+  width: 400px; /* Fixed width for consistency */
+  padding: 16px; /* Padding inside the card */
+}
+
+.form {
+  display: flex;
+  flex-direction: column; /* Stack form fields vertically */
+  gap: 16px; /* Space between form fields */
+}
+
+.submit-button {
+  align-self: center; /* Center the button */
+  margin-top: 16px; /* Space above the button */
+}

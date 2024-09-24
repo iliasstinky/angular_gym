@@ -1,0 +1,88 @@
+<!-- add a nav bar -->
+
+<mat-toolbar color="primary">
+
+  <button mat-icon-button  (click)="drawer.toggle()" >
+    <mat-icon>menu</mat-icon>
+  </button>
+  PrestigeFitness
+
+   <div class="app_name"></div> 
+  
+  <span  class="spacer"> </span>
+  
+  <button mat-button > Im logged in with = "{{ userId}}"</button>
+  <button mat-button routerLink="/users"class="buttonspace"> Users </button>
+
+  <button mat-button routerLink="/home"> Home </button>
+  
+  <button  mat-button [matMenuTriggerFor]="menu" class="buttonspace">  Check</button>
+  
+  <mat-menu #menu>
+  
+    <button  mat-menu-item> Profile </button> 
+    <button  mat-menu-item> Fourms </button> 
+    <button  mat-menu-item> Settings </button> 
+
+  
+  </mat-menu>
+    
+  <button mat-raised-button (click)="loginpage()" *ngIf="userId === null">Login</button>
+
+  <button mat-raised-button (click)="logoutbutton()" *ngIf="userId !== null" color="warning" >Logout</button>
+  
+
+
+</mat-toolbar>
+
+
+<!-- add side nav bar -->
+
+<mat-drawer-container>
+    <mat-drawer #drawer mode="side" position="start" opened="true">
+      <mat-nav-list>
+        <mat-list-item>
+          <!-- chenge icons -->
+
+          <button mat-button routerLink="/reservations"> <mat-icon>https</mat-icon> réservations</button>
+
+        </mat-list-item>
+
+        <mat-list-item>
+          <!-- chenge icons -->
+
+          <button mat-button routerLink="/subscriptions" > <mat-icon>subscriptions</mat-icon> subscriptions</button>
+
+        </mat-list-item>
+        
+        <mat-list-item>
+          <!-- chenge icons -->
+
+          <button mat-button routerLink="/calendar"> <mat-icon>calendar_today</mat-icon> calendar</button>
+
+        </mat-list-item>
+
+        <mat-list-item>
+          <!-- chenge icons -->
+
+          <button mat-button routerLink="/dashboards"> <mat-icon>dashboards</mat-icon> Dashboards</button>
+
+        </mat-list-item>
+
+      </mat-nav-list>
+    </mat-drawer>
+
+    <mat-drawer-content>
+
+      <div style="min-height: 600px;">
+        <router-outlet></router-outlet>
+
+  
+      </div>
+  
+
+    </mat-drawer-content>
+
+</mat-drawer-container>
+
+

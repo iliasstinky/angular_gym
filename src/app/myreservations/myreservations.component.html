@@ -1,0 +1,27 @@
+<div class="welcome-section">
+<br>
+  <p>You are viewing your active reservations. Below is the list of all the sessions you have reserved. You can view more details or cancel any reservation if needed.</p>
+</div>
+
+<div class="reservations-container">
+  <div class="reservations-list">
+    <mat-card *ngFor="let reservation of reservations" class="reservation-card">
+      <mat-card-header>
+        <mat-card-title class="mat-card-title">{{ reservation.title || 'Untitled Reservation' }}</mat-card-title>
+        <mat-card-subtitle>{{ reservation.date || 'No date available' }} at {{ reservation.time?.hour || '00' }}:{{ reservation.time?.minute || '00' }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <br>
+      <mat-card-content>
+        <p><strong>Location:</strong> {{ reservation.location || 'Not specified' }}</p>
+        <p><strong>Coach:</strong> {{ reservation.coach || 'Not assigned' }}</p>
+        <p><strong>Duration:</strong> {{ reservation.duration ? reservation.duration + ' hours' : 'Not specified' }}</p>
+        <p><strong>Places Left:</strong> {{ reservation.placesLeft !== null ? reservation.placesLeft : 'Not available' }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" class="details-button">Details</button>
+        <button mat-raised-button  color="">Cancel</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

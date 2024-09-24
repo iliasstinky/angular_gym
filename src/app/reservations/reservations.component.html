@@ -1,0 +1,41 @@
+<div class="card-container">
+  <mat-card class="matcard">
+    <mat-card-header>
+      <mat-card-title>What Collective activity awaits for you?</mat-card-title>
+      <mat-card-subtitle>Right workout at the right time.</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <button mat-button color="primary" class="buttonspace" routerLink="/add_reservation">Add a new session</button> 
+       <div class="myreservations_button_container">
+        <button mat-button class="myreservations_button" routerLink="/myreservations">My reservations </button>
+       </div>
+      
+      <div *ngIf="sessions.length > 0; else noSessions">
+        <div *ngFor="let session of sessions">
+          <mat-card class="session-card">
+            <mat-card-header>
+              <mat-card-title class="mat-card-title">{{ session.title }}</mat-card-title>
+              <mat-card-subtitle>Session information: </mat-card-subtitle>
+             
+            </mat-card-header>
+            <mat-divider ></mat-divider>
+            <mat-card-content >
+              <br> <p><strong>Time:</strong> {{ session.date | date: 'shortDate' }} | {{ session.time }} </p>
+              <p><strong>Duration:</strong> {{ session.duration }} minutes</p>
+              <p><strong>Location:</strong> {{ session.location }}</p>
+              <p><strong>Coach:</strong> {{ session.coach }}</p>
+              <p><strong>Places Left:</strong> {{ session.placesLeft }}</p>
+            </mat-card-content>
+            <mat-card-actions class="button_container">
+              <button mat-raised-button color="primary" (click)="reservesession(session.id)">Reserve!</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+      <ng-template #noSessions>
+        <p>No sessions available.</p>
+        
+      </ng-template>
+    </mat-card-content>
+  </mat-card>
+</div>

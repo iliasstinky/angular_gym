@@ -1,0 +1,72 @@
+/* Container for the entire admin page */
+.admin-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Search bar styling */
+.search-bar {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Cards container */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Minimalistic card */
+.minimalistic-card {
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: none;
+  background-color: #f2f3f7;
+  transition: box-shadow 0.2s ease;
+}
+
+.minimalistic-card:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Action buttons */
+.action-button {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+mat-paginator {
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .action-button {
+    width: 100%;
+  }
+}
+
+.b-c{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.s-c{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  
+  

@@ -1,0 +1,112 @@
+.calendarcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.calendar-card {
+  width: 400px;
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+.month-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.month-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.day {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30%;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+}
+
+.day:hover {
+  background-color: #e0e0e0;
+}
+
+.day.selected {
+  background-color: #ffc107;
+  color: white;
+}
+
+.card-content {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.log-button {
+  margin-top: 15px;
+}
+
+.mat-card-header {
+  padding-bottom: 0;
+}
+
+mat-divider {
+  margin: 0 !important;
+}
+
+.next-button {
+
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+.previous-button {
+  
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.mcc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 690px;
+  max-height: 690px;
+  position: relative; /* Set the parent to relative */
+}
+
+.dateinfo {
+  text-align: center;
+  color: #6d725ed0;
+}
+
+.log-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute; /* Position absolute within the parent */
+  bottom: 30px; /* Keep some padding from the bottom */
+}
+
+.log-button {
+  color: #6d725ed0;
+}

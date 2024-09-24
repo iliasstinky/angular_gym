@@ -1,0 +1,39 @@
+
+.container{
+  display: flex;
+  justify-content: center; /*horizontal centering  */
+  align-items: center;  /*vertical centering
+ /* justify-content: space-around;        for space */
+ /* flex-wrap: wrap;           Allow children to wrap onto the next line */
+  height: 92vh; /* Full height of the viewport  U can do full width but its optional as flex display uses full width already */
+  background-color: #f5f5f5; /* Light background for contrast */
+  
+}
+
+.mat-card {
+  /*align-items: flex-end ; */
+  width: 500px;
+  height: auto; /* Remove fixed height to allow card to grow with content */
+  padding: 20px; /* Add some padding for better spacing */
+}
+
+
+.full-width {
+  margin-top: 10px;
+  width: 100%; /* Ensure full width for the form fields */
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Align the button to the right */
+  margin-top: 16px; /* Spacing above the button */
+}
+
+.mat-card-header {
+  margin-bottom: 20px; /* Add spacing between header and form */
+}
+
+.signup-button-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

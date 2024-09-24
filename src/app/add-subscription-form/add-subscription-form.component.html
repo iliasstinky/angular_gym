@@ -1,0 +1,82 @@
+<div class="container"> 
+  <ng-container>
+    <mat-card class="card-position">
+      <mat-card-header>
+        <mat-card-title>Assign a Subscription to a Member!</mat-card-title>
+        <mat-card-subtitle>Choose a subscription</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <form class="subscription-form" (ngSubmit)="addSubscription()">
+          <!-- Subscription Type -->
+          <div class="row">
+            <div class="column">
+              <mat-form-field class="example-full-width">
+                <mat-label>Subscription Type</mat-label>
+                <mat-select [(ngModel)]="newSubscription.type" name="type" required>
+                  <mat-option value="standard">Standard (gym equipment and collective activities)</mat-option>
+                  <mat-option value="advanced">Advanced (everything Standard and hydroMassage)</mat-option>
+                  <mat-option value="gold">Gold (Unlimited access to all clubs in the country)</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- Start Date -->
+          <div class="row">
+            <div class="column">
+              <mat-form-field class="example-full-width">
+                <mat-label>Start Date</mat-label>
+                <input matInput [matDatepicker]="picker1" placeholder="Choose a date" [(ngModel)]="newSubscription.startDate" name="startDate" required>
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- End Date -->
+          <div class="row">
+            <div class="column">
+              <mat-form-field class="example-full-width">
+                <mat-label>End Date</mat-label>
+                <input matInput [matDatepicker]="picker2" [(ngModel)]="newSubscription.endDate" name="endDate" required>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- Status -->
+          <div class="row">
+            <div class="column">
+              <mat-form-field class="example-full-width">
+                <mat-label>Status</mat-label>
+                <mat-select [(ngModel)]="newSubscription.status" name="status" required>
+                  <mat-option value="active">Active</mat-option>
+                  <mat-option value="inactive">Inactive</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- Member Selection -->
+          <div class="row">
+            <div class="column">
+              <mat-form-field class="example-full-width">
+                <mat-label>Member </mat-label>
+                <mat-select [(ngModel)]="newSubscription.memberId" name="memberId" required>
+                  <mat-option *ngFor="let member of members" [value]="member.id">
+                    {{ member.username }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button mat-button color="primary" type="submit" [disabled]="!newSubscription.memberId || newSubscription.memberId === 0">Assign Subscription</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</div>

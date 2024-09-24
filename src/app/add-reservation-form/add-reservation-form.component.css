@@ -1,0 +1,69 @@
+/* Container styles */
+.container {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  padding: 20px;
+  width: 100%; /* Full width for the container */
+  min-height: 90vh; /* Full height of the viewport */
+  background-color: #f5f5f5; /* Light grey background */
+  box-sizing: border-box; /* Include padding in width calculations */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+/* Card positioning */
+.card-position {
+  width: 100%;
+  max-width: 600px;
+  height: 700px;
+  margin: 20px 0; /* Add vertical margin between cards */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: white; /* Ensure card has a white background */
+  padding: 20px; /* Add padding inside the card for content spacing */
+}
+
+/* Card title styles */
+mat-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Card subtitle styles */
+mat-card-subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+/* Form styles */
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.001px; /* Increase gap between form elements */
+}
+
+/* Form field styling */
+.full-width {
+  width: 100%;
+}
+
+/* Button styles */
+.button {
+  align-self: flex-end; /* Align the button to the end */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .card-position {
+    margin: 10px 0; /* Adjust margin for smaller screens */
+  }
+  
+  button[type="submit"] {
+    width: 100%; /* Make button full width on small screens */
+    align-self: center; /* Center button when full width */
+  }
+}

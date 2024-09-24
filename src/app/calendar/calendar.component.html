@@ -1,0 +1,51 @@
+<div class="calendarcontainer">
+  <div style="width: 100%;">
+    <mat-card>
+      <mat-card-header>
+        <div class="month-navigation">
+          <button mat-button (click)="previousMonth()" class="previous-button">Previous</button>
+          <mat-card-title>{{ getMonthName(currentMonth) }} {{ currentYear }}</mat-card-title>
+          <button mat-button (click)="nextMonth()"  class="next-button">Next</button>
+        </div>
+        <mat-divider></mat-divider>
+        
+        <div class="calendar">
+          <div 
+            *ngFor="let day of daysInMonth; let i = index" 
+            class="day" 
+            [class.selected]="isSelectedDay(day)"
+            (click)="onDayClick(day , $event)">
+            {{ day }}
+          </div>
+        </div>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content class="mcc">
+        <br>
+        <p *ngIf="selectedDay">
+          You are viewing your active list of PrestigeFitness app content and reservations. Below is the list of all the sessions you have reserved on 
+          <strong>{{ selectedDay }} {{ getMonthName(currentMonth) }}, {{ currentYear }}</strong>.
+        </p>
+        <mat-card-subtitle *ngIf="!selectedDay" class="dateinfo">Please select a day to log your activities.</mat-card-subtitle>
+        
+        <div *ngIf="userReservations.length > 0">
+          <h3>Reservations for {{ selectedDay }}:</h3>
+          <ul>
+            <li *ngFor="let reservation of userReservations">
+             At {{ reservation.time }} you have a session with Coach : '{{reservation.coach}}' In: {{reservation.location}}
+              
+            </li>
+          </ul>
+        </div>
+
+        <div *ngIf="userReservations.length === 0 && selectedDay">
+          <p>No reservations found for {{ selectedDay }}.</p>
+        </div>
+
+        <div class="log-button-container">
+          <button mat-button class="log-button" *ngIf="selectedDay">Log something</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+/* Container styling */
+.welcome-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.welcome-section h1 {
+  font-size: 2.5em;
+  color: #2c3e50; /* Dark blue color for the heading */
+}
+
+.welcome-section p {
+  font-size: 1.1em;
+  color: #7f8c8d; /* Light gray color for the paragraph */
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Reservations container */
+.reservations-container {
+  padding: 20px;
+}
+
+/* Reservations list styling */
+.reservations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Reservation card styling */
+.reservation-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 16px;
+}
+
+/* Reservation header styling */
+.mat-card-title {
+  font-size: 1.5em;
+  color: #6d725ed0; /* Correct color for the title */
+}
+
+.mat-card-subtitle {
+  font-size: 1.1em;
+  color: #666; /* Darker color for the subtitle */
+}
+
+/* Card content styling */
+.mat-card-content p {
+  margin: 8px 0;
+  color: #2c3e50; /* Dark color for content text */
+}
+
+/* Card actions */
+.mat-card-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /* Add space between buttons */
+}
+
+.mat-card-actions button {
+  margin: 0;
+}
+
+.details-button{
+ margin-right: 10px;
+
+}

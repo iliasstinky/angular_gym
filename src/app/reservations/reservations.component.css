@@ -1,0 +1,87 @@
+/* Card container styling */
+.card-container {
+  position: relative;
+  min-width: 800px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  background-color: #ffffff67;
+  border-radius: 8px;
+}
+
+/* Main mat card styling */
+.matcard {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin-bottom: 20px;
+  display: flex;
+
+}
+.myreservations_button_container{
+  display: flex;
+  align-items: flex-end ;
+  justify-content: flex-end;
+}
+/* Button inside mat card content */
+.buttonspace {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+   /* Align button to the right */
+  align-items: flex-end ;
+  justify-content: flex-end;
+}
+
+/* Session card styling */
+.session-card {
+  margin-bottom: 20px; /* Space between session cards */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(177, 157, 236, 0.1);
+  background-color: #f9f9f9; /* Slightly different background color for session cards */
+}
+
+/* Card title styling */
+.mat-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #6d725ed0;
+}
+
+/* Card subtitle styling */
+.mat-card-subtitle {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Button container for Sign in button */
+.button_container {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-container {
+    padding: 10px;
+  }
+
+  .matcard {
+    padding: 10px;
+  }
+
+  .session-card {
+    padding: 10px;
+  }
+
+  .buttonspace {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .button_container {
+    margin-top: 10px;
+  }
+}

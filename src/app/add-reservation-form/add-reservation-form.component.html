@@ -1,0 +1,61 @@
+<div class="container">
+  <ng-container>
+    <mat-card class="card-position">
+      <mat-card-header>
+        <mat-card-title>Add a new Session!</mat-card-title>
+        <mat-card-subtitle>Workout in groups.</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <form class="reservation-form" (ngSubmit)="addSession()">
+          <!-- Session Title -->
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Session Title</mat-label>
+            <input matInput placeholder="Enter session title" name="title" [(ngModel)]="newSession.title" required>
+          </mat-form-field>
+
+          <!-- Event Date -->
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Event Date</mat-label>
+            <input matInput [matDatepicker]="picker1" placeholder="Choose a date" name="date" [(ngModel)]="newSession.date" required>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+
+          <!-- Time -->
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Time (HH:mm am/pm)</mat-label>
+            <input matInput placeholder="Enter time in HH:mm:ss format" name="time" [(ngModel)]="newSession.time" type="time" required>
+          </mat-form-field>
+
+          <!-- Duration -->
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Duration (minutes)</mat-label>
+            <input matInput type="number" placeholder="Enter duration" name="duration" [(ngModel)]="newSession.duration" required>
+          </mat-form-field>
+
+          <!-- Location -->
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Location</mat-label>
+            <input matInput placeholder="Enter location" name="location" [(ngModel)]="newSession.location" required>
+          </mat-form-field>
+
+          <!-- Coach -->
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Coach</mat-label>
+            <input matInput placeholder="Enter coach name" name="coach" [(ngModel)]="newSession.coach" required>
+          </mat-form-field>
+
+          <!-- Places Left -->
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Places Left</mat-label>
+            <input matInput type="number" placeholder="Enter number of places left" name="placesLeft" [(ngModel)]="newSession.placesLeft" required>
+          </mat-form-field>
+
+          <!-- Submit Button -->
+          <button mat-raised-button color="primary" class="button" type="submit">Create Session</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</div>
